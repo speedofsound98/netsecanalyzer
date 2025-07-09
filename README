@@ -1,0 +1,97 @@
+# NetSecAnalyzer README
+
+## 🛡️ NetSecAnalyzer: A Python Toolkit for Network Threat Detection & Protocol
+Forensics
+
+### Overview
+NetSecAnalyzer is a modular Python toolkit that monitors, analyzes, and detects
+network-based threats across protocols like TCP/IP, HTTP/S, DNS, SMB, and FTP.
+It's ideal for learning protocol internals, practicing packet analysis,
+and building custom detection mechanisms.
+
+
+### Features
+- Real-time packet capture and offline PCAP parsing
+- Protocol-level analysis (TCP/IP, HTTP, DNS, FTP, SMB)
+- Heuristic and signature-based threat detection
+- Basic CVE lookup and MITRE ATT&CK mapping
+- Report generation (JSON/CSV)
+- Optional GUI using Streamlit
+
+
+### Folder Structure
+```
+netsecanalyzer/
+├── sniffing/
+│   ├── tcp_sniffer.py           # Captures and processes TCP/IP packets
+│   ├── dns_inspector.py         # Analyzes DNS queries and flags anomalies
+│   └── smb_ftp_watcher.py       # Monitors FTP/SMB and logs suspicious activity
+├── threats/
+│   ├── cve_checker.py           # Connects to CVE databases or static feed
+│   ├── heuristic_rules.py       # Contains custom detection rules
+├── reports/
+│   ├── report_generator.py      # Generates reports
+│   └── mitre_mapper.py          # Maps threat events to MITRE ATT&CK
+├── dashboard/
+│   └── main_gui.py              # Optional Streamlit dashboard
+├── utils/
+│   └── logger.py                # Logging module for alerts and events
+└── main.py                      # Main orchestrator script
+
+---
+
+### Sample Use Cases
+- Detect DNS tunneling or exfiltration
+- Capture FTP login credentials sent in plaintext
+- Detect HTTP GET requests with suspicious payloads (e.g., SQLi or RCE patterns)
+- Monitor for SMBv1 usage or brute-force behavior
+- Identify CVEs related to observed packet behaviors
+
+---
+
+### Requirements
+
+scapy
+pyshark
+dnspython
+requests
+streamlit
+rich
+
+Install them using:
+bash
+pip install -r requirements.txt
+
+
+---
+
+### How to Run
+bash
+python main.py             # Run main CLI
+streamlit run dashboard/main_gui.py  # Optional GUI
+
+1. Make sure you’re in the directory where tcp_sniffer.py is saved
+2. run in terminal: sudo -E tcp_sniffer.py -i en0 (macOS cmd)
+
+### Example: run DNS inspector on interface en0
+sudo -E python3 main.py -m dns -i en0 -c 30
+
+
+```
+
+---
+
+### 🧠 Stretch Goals
+- Add machine learning models to detect anomalies
+- Integrate with Zeek/Suricata logs
+- Simulate attacks for red/blue team exercises
+
+---
+
+### 👨‍💻 Author
+Nadav Hardof
+
+---
+
+### 📜 License
+MIT License
