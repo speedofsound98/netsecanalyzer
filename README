@@ -1,6 +1,6 @@
 # NetSecAnalyzer README
 
-## 🛡️ NetSecAnalyzer: A Python Toolkit for Network Threat Detection & Protocol
+## NetSecAnalyzer: A Python Toolkit for Network Threat Detection & Protocol
 Forensics
 
 ### Overview
@@ -20,7 +20,7 @@ and building custom detection mechanisms.
 
 
 ### Folder Structure
-```
+
 netsecanalyzer/
 ├── sniffing/
 │   ├── tcp_sniffer.py           # Captures and processes TCP/IP packets
@@ -35,7 +35,9 @@ netsecanalyzer/
 ├── dashboard/
 │   └── main_gui.py              # Optional Streamlit dashboard
 ├── utils/
-│   └── logger.py                # Logging module for alerts and events
+│   ├── logger.py                # Logging module for alerts and events
+│   └── runner.py                # Runs a sniffer module, and saves them as JSON
+├── requirements.txt             # the projects libraries.
 └── main.py                      # Main orchestrator script
 
 ---
@@ -71,27 +73,44 @@ python main.py             # Run main CLI
 streamlit run dashboard/main_gui.py  # Optional GUI
 
 1. Make sure you’re in the directory where tcp_sniffer.py is saved
-2. run in terminal: sudo -E tcp_sniffer.py -i en0 (macOS cmd)
+2. activate the venv environment:
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+3. run in terminal: sudo -E tcp_sniffer.py -i en0 (macOS cmd)
+4. after running the sniffer, run cmd:
+streamlit run dashboard/main_gui.py
+to load the webpage dashboard
 
 ### Example: run DNS inspector on interface en0
 sudo -E python3 main.py -m dns -i en0 -c 30
 
+### TESTS
+To test DNS alerts:
+run cmd: nslookup weird-domain12345.com
+
+To trigger SMB/FTP:
+run cmd: ftp 192.168.x.x
+
+To trigger TCP:
+curl http://example.com (with the address of your choice)
 
 ```
 
 ---
 
-### 🧠 Stretch Goals
+### Stretch Goals
 - Add machine learning models to detect anomalies
 - Integrate with Zeek/Suricata logs
 - Simulate attacks for red/blue team exercises
 
 ---
 
-### 👨‍💻 Author
+### Author
 Nadav Hardof
 
 ---
 
-### 📜 License
+### License
 MIT License

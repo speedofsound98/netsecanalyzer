@@ -27,13 +27,3 @@ def save_as_csv(data, filename_prefix="report"):
         writer.writeheader()
         writer.writerows(data)
     print(f"[+] Report saved to {filename}")
-
-
-# Example usage:
-if __name__ == "__main__":
-    sample_data = [
-        {"Timestamp": "2025-07-01 10:00:00", "Event": "Possible SQL Injection", "Source IP": "192.168.1.10"},
-        {"Timestamp": "2025-07-01 10:01:00", "Event": "Suspicious DNS Query", "Source IP": "192.168.1.12"}
-    ]
-    save_as_json(sample_data, "test_report")
-    save_as_csv(sample_data, "test_report")
