@@ -11,7 +11,7 @@ and building custom detection mechanisms.
 
 
 ### Features
-- Real-time packet capture and offline PCAP parsing
+- Real-time packet sniffing and capture and offline PCAP parsing
 - Protocol-level analysis (TCP/IP, HTTP, DNS, FTP, SMB)
 - Heuristic and signature-based threat detection
 - Basic CVE lookup and MITRE ATT&CK mapping
