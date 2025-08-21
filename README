@@ -16,7 +16,7 @@ and building custom detection mechanisms.
 - Heuristic and signature-based threat detection
 - Basic CVE lookup and MITRE ATT&CK mapping
 - Report generation (JSON/CSV)
-- Optional GUI using Streamlit
+- GUI using Streamlit -in progress-
 
 
 ### Folder Structure
