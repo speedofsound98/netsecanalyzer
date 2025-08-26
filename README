@@ -33,7 +33,8 @@ netsecanalyzer/
 │   ├── report_generator.py      # Generates reports
 │   └── mitre_mapper.py          # Maps threat events to MITRE ATT&CK
 ├── dashboard/
-│   └── main_gui.py              # Optional Streamlit dashboard
+│   ├── main_gui.py              # Optional Streamlit dashboard
+│   └── cve_parser_dashboard     # streamlit dashboard for the cve_parser
 ├── utils/
 │   ├── logger.py                # Logging module for alerts and events
 │   └── runner.py                # Runs a sniffer module, and saves them as JSON

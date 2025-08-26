@@ -8,7 +8,7 @@ import argparse
 import os
 
 
-def process_csv(file, min_cvss=8.0, export_json=False):
+def process_csv(file, min_cvss=6.0, export_json=False):
     df = pd.read_csv(file)
     df = df[df["cvss_score"] >= min_cvss]
     df = df[["cve_id", "description", "vendor", "cvss_score", "published_date"]]
