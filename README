@@ -29,6 +29,7 @@ netsecanalyzer/
 ├── threats/
 │   ├── cve_checker.py           # Connects to CVE databases or static feed
 │   ├── heuristic_rules.py       # Contains custom detection rules
+│   └── cve_parser.py            # parses through a cve and makes a table of it
 ├── reports/
 │   ├── report_generator.py      # Generates reports
 │   └── mitre_mapper.py          # Maps threat events to MITRE ATT&CK
