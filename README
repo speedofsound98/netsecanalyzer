@@ -98,8 +98,6 @@ run cmd: ftp 192.168.x.x
 To trigger TCP:
 curl http://example.com (with the address of your choice)
 
-```
-
 ---
 
 ### Stretch Goals
