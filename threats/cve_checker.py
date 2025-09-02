@@ -11,8 +11,10 @@ import csv
 CVE_API_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 
 
-# Query NVD for CVEs by vendor and product
 def search_cves(vendor, product, limit=5, severity=None, output_format=None):
+    """
+    This Function Queries NVD for CVEs by vendor and product
+    """
     params = {
         "keywordSearch": f"{vendor} {product}",
         "resultsPerPage": limit
