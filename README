@@ -91,6 +91,7 @@ sudo -E python3 main.py -m dns -i en0 -c 30
 ### TESTS
 To test DNS alerts:
 run cmd: nslookup weird-domain12345.com
+- needs expansion -
 
 To trigger SMB/FTP:
 run cmd: ftp 192.168.x.x
