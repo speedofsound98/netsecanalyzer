@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 ### How to Run
 bash
-python main.py             # Run main CLI
+python main.py    # Run main CLI
 streamlit run dashboard/main_gui.py  # Optional GUI
 
 1. Make sure you’re in the directory where tcp_sniffer.py is saved
